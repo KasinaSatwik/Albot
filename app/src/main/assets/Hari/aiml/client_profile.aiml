@@ -367,7 +367,7 @@ I call you <get name="name"/>.</template>
 <template><get name="address"/></template>
 </category>
 <category><pattern>MY ADDRESS IS *</pattern>
-<template>I will remember your address is <think><set name="address"><star/></set></think></template>
+<template>Is it a nice place? <think><set name="address"><star/></set></think></template>
 </category>
 <category><pattern>MY SON S NAME IS *</pattern>
 <template>I will remember <star/> is your son.  <think><set name="son"><star/></set></think><think><set name="he"><set name="topic"><star/></set></set></think></template>

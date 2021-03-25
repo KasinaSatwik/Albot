@@ -20,6 +20,15 @@
         android:text="Edit Details"
         android:layout_below="@id/chatbotbutton"/>
 
+    <Button
+        android:id="@+id/maps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_marginTop="50dp"
+        android:text="Take me home"
+        android:layout_below="@id/editdetails"/>
+
 
 
 </RelativeLayout>

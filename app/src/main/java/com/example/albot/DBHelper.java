@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
+import org.alicebot.ab.ParseState;
+import org.w3c.dom.Node;
+
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DBNAME = "Login.db";
     public DBHelper(Context context) {
@@ -98,6 +101,8 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
+
+
     public Cursor getdata ()
     {
         SQLiteDatabase DB = this.getWritableDatabase();
@@ -105,5 +110,10 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
 
     }
+
+
+
 }
+
+
 

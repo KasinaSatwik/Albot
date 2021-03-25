@@ -233,8 +233,4 @@
 <category><pattern>GPS OFF</pattern>
 <template>Use Settings to turn off GPS.</template>
 </category>
-<category>
-<pattern>XSEARCH *</pattern>
-<template> <srai>RANDOM SEARCH PHRASE</srai> <oob><search><star/></search></oob> </template>
-</category>
 </aiml>

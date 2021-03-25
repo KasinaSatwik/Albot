@@ -1,6 +1,7 @@
 package com.example.albot;
 
 import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
@@ -8,12 +9,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.example.albot.ChatMessageAdapter;
-import com.example.albot.ChatMessage;
 
 import org.alicebot.ab.AIMLProcessor;
 import org.alicebot.ab.Bot;
@@ -41,6 +41,8 @@ public class Chatbot extends AppCompatActivity {
     public Bot bot;
     public static Chat chat;
     private ChatMessageAdapter mAdapter;
+    DBHelper DB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class Chatbot extends AppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.iv_image);
         mAdapter = new ChatMessageAdapter(this, new ArrayList<ChatMessage>());
         mListView.setAdapter(mAdapter);
+        DB = new DBHelper(this);
+        AIMLProcessor.extension =  new TestAIMLExtenstion();
 
         mButtonSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,4 +168,7 @@ public class Chatbot extends AppCompatActivity {
         System.out.println("Human: " + request);
         System.out.println("Robot: " + response);
     }
+
+
+
 }
