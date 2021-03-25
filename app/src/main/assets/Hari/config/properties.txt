@@ -1,5 +1,5 @@
 url:http://djustice-android.tumblr.com
-name:Hari
+name:Albot
 email:hariutd@gmail.com
 gender:male
 botmaster:Hari Vignesh Jayapalan

@@ -13,9 +13,6 @@ import com.example.albot.Chatbot;
 
 import java.util.List;
 
-/**
- * Created by Hari on 11/05/16.
- */
 public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
     private static final int MY_MESSAGE = 0, OTHER_MESSAGE = 1, MY_IMAGE = 2, OTHER_IMAGE = 3;
 
