@@ -5,10 +5,21 @@
 
     <Button
         android:id="@+id/chatbotbutton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Chatbot" />
+        android:text="Chatbot"
+        android:textSize="24dp"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/editdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_marginTop="50dp"
+        android:text="Edit Details"
+        android:layout_below="@id/chatbotbutton"/>
+
 
 
 </RelativeLayout>

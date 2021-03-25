@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
+        MyDB.execSQL("create Table users(username TEXT primary key, password TEXT, age TEXT, bloodgroup TEXT, contacts TEXT, houseno varchar(225), housename varchar(225),locality TEXT,city TEXT)");
     }
 
     @Override
@@ -23,15 +23,61 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("drop Table if exists users");
     }
 
-    public Boolean insertData(String username, String password){
+    public Boolean insertData(String username, String password, String age, String bloodgroup, String contacts, String houseno, String housename, String locality, String city){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
         contentValues.put("username", username);
         contentValues.put("password", password);
+        contentValues.put("age", age);
+        contentValues.put("bloodgroup", bloodgroup);
+        contentValues.put("contacts", contacts);
+        contentValues.put("houseno", houseno);
+        contentValues.put("housename", housename);
+        contentValues.put("locality", locality);
+        contentValues.put("city", city);
         long result = MyDB.insert("users", null, contentValues);
         if(result==-1) return false;
         else
             return true;
+    }
+
+    public Boolean updateuserdata(String username, String password, String age, String bloodgroup, String contacts, String houseno, String housename, String locality, String city) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("password", password);
+        contentValues.put("age", age);
+        contentValues.put("bloodgroup", bloodgroup);
+        contentValues.put("contacts", contacts);
+        contentValues.put("houseno", houseno);
+        contentValues.put("housename", housename);
+        contentValues.put("locality", locality);
+        contentValues.put("city", city);
+        Cursor cursor = DB.rawQuery("Select * from users where username = ?", new String[]{username});
+        if (cursor.getCount() > 0) {
+            long result = DB.update("users", contentValues, "username=?", new String[]{username});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }}
+    public Boolean deletedata (String username)
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from users where username = ?", new String[]{username});
+        if (cursor.getCount() > 0) {
+            long result = DB.delete("users", "username=?", new String[]{username});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+
     }
 
     public Boolean checkusername(String username) {
@@ -50,6 +96,14 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
+    }
+
+    public Cursor getdata ()
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from users", null);
+        return cursor;
+
     }
 }
 

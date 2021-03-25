@@ -13,6 +13,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private Button Chatbot;
+    private Button Edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,20 @@ public class HomeActivity extends AppCompatActivity {
                 OpenChatbot();
             }
         });
+        Edit = (Button) findViewById(R.id.editdetails);
+        Edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OpenEditdetails();
+            }
+        });
 
 
+    }
+
+    private void OpenEditdetails() {
+        Intent intent = new Intent(this,Editdetails.class);
+        startActivity(intent);
     }
 
 

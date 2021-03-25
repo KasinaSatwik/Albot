@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="User Name"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/username"/>
 
     <EditText
@@ -27,23 +27,80 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Retype Password"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/password"/>
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/repassword"/>
+
+    <EditText
+        android:id="@+id/bloodgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Blood Group"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/age"/>
+
+    <EditText
+        android:id="@+id/contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Emergency contacts"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/bloodgroup"/>
+
+    <EditText
+        android:id="@+id/houseno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="House no"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/contacts"/>
+
+    <EditText
+        android:id="@+id/housename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="House Name"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/houseno"/>
+
+    <EditText
+        android:id="@+id/locality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Locality"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/housename"/>
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/locality"/>
+
 
     <Button
         android:id="@+id/btnsignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/repassword"/>
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/city"/>
 
     <Button
         android:id="@+id/btnsignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Existing user! Go to Sign in page"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/btnsignup"/>
 
 </RelativeLayout>
