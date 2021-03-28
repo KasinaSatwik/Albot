@@ -84,7 +84,7 @@ public class Editdetails extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(Editdetails.this);
                 builder.setCancelable(true);
-                builder.setTitle("User Entries");
+                builder.setTitle("User Entry");
                 builder.setMessage(buffer.toString());
                 builder.show();
             }        });

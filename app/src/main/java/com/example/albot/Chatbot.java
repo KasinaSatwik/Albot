@@ -55,7 +55,6 @@ public class Chatbot extends AppCompatActivity {
         mAdapter = new ChatMessageAdapter(this, new ArrayList<ChatMessage>());
         mListView.setAdapter(mAdapter);
         DB = new DBHelper(this);
-        AIMLProcessor.extension =  new TestAIMLExtenstion();
 
         mButtonSend.setOnClickListener(new View.OnClickListener() {
             @Override
